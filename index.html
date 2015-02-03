@@ -11,38 +11,42 @@
 		<title>SORD GUARDIANS</title>
 			
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
+		<link rel="stylesheet" href="http://pasteup.guim.co.uk/0.0.5/css/fonts.pasteup.min.css">
 		<link rel="stylesheet" type="text/css" href="css/input.css">
 		
 	</head>
 	<body>
 		
 		<header class="site-header">
-
 			<h1>Guardian News</h1>
-
 		</header>
-
-		<div role='tabpanel'>
-			<ul id='sections'class="nav nav-tabs" role="tablist">	   
-			   <li role='presentation' class='active'><a href="#uknews" aria-controls='uknews' data-toggle="tab">UK News</a><li>
-			   <li role='presentation'><a href="#football" aria-controls='football' data-toggle="tab">Football</a></li>
-			   <li role='presentation'><a href="#travel" aria-controls='travel' data-toggle="tab"> Travel </a></li>
-			</ul>
-			<!-- Tab panes -->
-			<div class="tab-content">
-				<div role="tabpanel" class="tab-pane active" id="uknews">
-					<ul id='uknews-result'></ul>	
-				</div>
-				<div role="tabpanel" class="tab-pane" id="football">
-					<ul id='football-result'></ul>
-				</div>
-				<div role="tabpanel" class="tab-pane" id="travel">
-					<ul id='travel-result'></ul>
+		<div class='container'>
+		<div class='row'>
+			<div class='col-xs-3'></div>
+			<div class='col-xs-6'>
+				<div role='tabpanel' class='tabpanel'>
+					<ul id='sections'class="nav nav-tabs" role="tablist">	   
+					   <li role='presentation' class='active'><a href="#uknews" aria-controls='uknews' data-toggle="tab">UK News</a><li>
+					   <li role='presentation'><a href="#football" aria-controls='football' data-toggle="tab">Football</a></li>
+					   <li role='presentation'><a href="#travel" aria-controls='travel' data-toggle="tab"> Travel </a></li>
+					</ul>
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="uknews">
+							<ol id='uknews-result'></ol>	
+						</div>
+						<div role="tabpanel" class="tab-pane zone-sport" id="football">
+							<ol class='zone-color' id='football-result'></ol>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="travel">
+							<ol id='travel-result'></ol>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-				
+			<div class='col-xs-3'></div>
+		</div>		
+	</div>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		<script type='text/javascript' src="guardian.js"> </script>
