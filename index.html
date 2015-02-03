@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>SORD GUARDIANS</title>
+			
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+		<link rel="stylesheet" type="text/css" href="css/input.css">
+		
+	</head>
+	<body>
+		
+		<header class="site-header">
+
+			<h1>Guardian News</h1>
+
+		</header>
+
+		<div role='tabpanel'>
+			<ul id='sections'class="nav nav-tabs" role="tablist">	   
+			   <li role='presentation' class='active'><a href="#uknews" aria-controls='uknews' data-toggle="tab">UK News</a><li>
+			   <li role='presentation'><a href="#football" aria-controls='football' data-toggle="tab">Football</a></li>
+			   <li role='presentation'><a href="#travel" aria-controls='travel' data-toggle="tab"> Travel </a></li>
+			</ul>
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="uknews">
+					<ul id='uknews-result'></ul>	
+				</div>
+				<div role="tabpanel" class="tab-pane" id="football">
+					<ul id='football-result'></ul>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="travel">
+					<ul id='travel-result'></ul>
+				</div>
+			</div>
+		</div>
+				
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		<script type='text/javascript' src="guardian.js"> </script>
+
+	</body>
+
+</html>
