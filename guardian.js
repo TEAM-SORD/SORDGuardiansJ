@@ -1,7 +1,38 @@
 
 $(document).ready(function(){
-			
 	
+	$('.a-uknews').click(function(e){		
+		$('#uknews-result').empty();
+		$.getJSON("http://content.guardianapis.com/search?section=uk-news&api-key=test", function(data, status){
+	    $.each( data.response.results, function( index, element ) {
+				var html = "<li><a class='uknews-article' href='"+ element.webUrl +  "'>" +element.webTitle + '</a></li>';
+				$('#uknews-result').append( html );
+	        });
+	    });
+	}),
+
+	$('.a-football').click(function(e){		
+		$('#football-result').empty();
+		$.getJSON("http://content.guardianapis.com/search?section=football&api-key=test", function(data, status){
+	    $.each( data.response.results, function( index, element ) {
+				var html = "<li><a class='football-article' href='"+ element.webUrl +  "'>" +element.webTitle + '</a></li>';
+				$('#football-result').append( html );
+	        });
+	    });
+	}),
+
+	$('.a-travel').click(function(e){		
+		$('#travel-result').empty();
+		$.getJSON("http://content.guardianapis.com/search?section=travel&api-key=test", function(data, status){
+	    $.each( data.response.results, function( index, element ) {
+				var html = "<li><a class='travel-article' href='"+ element.webUrl +  "'>" +element.webTitle + '</a></li>';
+				$('#travel-result').append( html );
+	        });
+	    });
+	}),
+	
+	// This call to the Guaradian API gets called on initial loading of the webpage in order to populate the active page
+	// straight away.  Only need to populate the active page to save on unneccessary calls to the API
 	$.getJSON("http://content.guardianapis.com/search?section=uk-news&api-key=test", function(data, status){
 	    $.each( data.response.results, function( index, element ) {
 				var html = "<li><a class='uknews-article' href='"+ element.webUrl +  "'>" +element.webTitle + '</a></li>';
@@ -9,7 +40,7 @@ $(document).ready(function(){
 	        });
     });
 
-	$.getJSON("http://content.guardianapis.com/search?section=football&api-key=test", function(data, status){
+	/*$.getJSON("http://content.guardianapis.com/search?section=football&api-key=test", function(data, status){
         $.each( data.response.results, function( index, element ) {
 			var html = "<li><a class='football-article' href='"+ element.webUrl +  "'>" +element.webTitle + '</a></li>';
 			$('#football-result').append( html );
@@ -22,7 +53,7 @@ $(document).ready(function(){
 			$('#travel-result').append( html );
         });
     });
-   
+   */
 });
 /*
 $(document).ready(function(){
