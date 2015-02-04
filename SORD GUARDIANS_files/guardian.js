@@ -4,21 +4,21 @@ $(document).ready(function(){
 	
 	$.getJSON("http://content.guardianapis.com/search?section=uk-news&api-key=test", function(data, status){
 	    $.each( data.response.results, function( index, element ) {
-				var html = "<li><a class='uknews-article' href='"+ element.webUrl +  "'>" +element.webTitle + '</a></li>';
+				var html = "<li><a href='"+ element.webUrl +  "'>" +element.webTitle + '</a></li>';
 				$('#uknews-result').append( html );
 	        });
     });
 
 	$.getJSON("http://content.guardianapis.com/search?section=football&api-key=test", function(data, status){
         $.each( data.response.results, function( index, element ) {
-			var html = "<li><a class='football-article' href='"+ element.webUrl +  "'>" +element.webTitle + '</a></li>';
+			var html = "<li><a href='"+ element.webUrl +  "'>" +element.webTitle + '</a></li>';
 			$('#football-result').append( html );
         });
     });
 	
 	$.getJSON("http://content.guardianapis.com/search?section=travel&api-key=test", function(data, status){
         $.each( data.response.results, function( index, element ) {
-			var html = "<li><a class='travel-article' href='"+ element.webUrl +  "'>" +element.webTitle + '</a></li>';
+			var html = "<li><a href='"+ element.webUrl +  "'>" +element.webTitle + '</a></li>';
 			$('#travel-result').append( html );
         });
     });

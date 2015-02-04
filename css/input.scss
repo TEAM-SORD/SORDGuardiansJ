@@ -2,7 +2,7 @@
 # Front matter comment to ensure Jekyll properly reads file.
 ---
 
-$primaryColor:#FFFFCC;
+$primaryColor:#F5F5E1;
 
 
 body{
@@ -12,6 +12,19 @@ body{
 }
 
 .site-header{
+
+  h1 {
+  font-family: "Guardian Egyptian Headline", Georgia, serif;
+
+    color: #446077;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 2px solid;
+    border-top-color: rgb(97,128,155);
+    border-top-width: thick;
+
+  }
 	
 	ul{
         padding:0;
@@ -36,6 +49,23 @@ body{
     }
 }
 
+.nav-tabs{
+  font-family: "Guardian Egyptian Headline", Georgia, serif;
+ }
+.tab-content{
+  font-family: "Guardian Egyptian Headline", Georgia, serif;
+
+}
+.uknews-article{
+  color: #D61D00;
+}
+
+.football-article{
+  color: #008000;
+}
+.travel-article{
+  color: #066EC9;
+}
 .group:before,
 .group:after {
     content: "";
