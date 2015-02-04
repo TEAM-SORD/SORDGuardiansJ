@@ -25,7 +25,7 @@ function getResultsJSON( apiRequestURL ) {
            if( request.status == 200){				          		
           		var data = JSON.parse( request.responseText);
           		data.response.results.map( function( element, index ) {
-						var html = "<li><a class='+ element.sectionId + '-article' href='"+ element.webUrl +  "'>" +element.webTitle + '</a></li>';
+						var html = "<li><a class='" + element.sectionId + "-article' href='"+ element.webUrl +  "'>" +element.webTitle + '</a></li>';
 						$('#'+element.sectionId + '-result').append( html );
 			        });               
            }
