@@ -49,7 +49,7 @@ function getResultsJSON( apiRequestURL ) {
 $(document).ready(function(){
 	
 	$('.a-uknews').click(function(e){		
-		$('#uknews-result').empty();
+		$('#uk-news-result').empty();
 		reloadNewsBySection( 'uk-news' );	
 	}),
 
