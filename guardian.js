@@ -1,9 +1,10 @@
 function reloadNewsBySection( section ) {
-	var apiURL = "http://content.guardianapis.com/search?section=" + section + "&api-key=test";
-	getResultsJSON( apiURL );	
+	//var apiURL = "http://content.guardianapis.com/search?section=" + section + "&api-key=test";
+  var apiURL = "http://content.guardianapis.com/search?section=" + section + "&order-by=newest&show-fields=all&api-key=test"
+	getResultsJSON( apiURL, section );	
 };
 
-function getResultsJSON( apiRequestURL ) {
+function getResultsJSON( apiRequestURL, section ) {
     var request;
     if (window.XMLHttpRequest) {
         // code for IE7+, Firefox, Chrome, Opera, Safari
@@ -24,10 +25,8 @@ function getResultsJSON( apiRequestURL ) {
         if ( request.readyState == 4 ) {
            if( request.status == 200){				          		
           		var data = JSON.parse( request.responseText);
-          		data.response.results.map( function( element, index ) {
-						var html = "<li><a class='" + element.sectionId + "-article' href='"+ element.webUrl +  "'>" +element.webTitle + '</a></li>';
-						$('#'+element.sectionId + '-result').append( html );
-			        });               
+              addArticlesToAccordion(data, section);
+
            }
            else if(  request.status == 400) {
       
@@ -44,6 +43,56 @@ function getResultsJSON( apiRequestURL ) {
   		console.log( 'ERROR: ' );
 	};
 };
+
+function addArticlesToAccordion(data, section){
+  var accordionHtml = [];
+  var accordionRoot = '<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">';
+  data.response.results.map( function( element, index ) {
+    var collapsed;
+    var expanded;
+    if (index === 0) {
+      expanded = 'aria-expanded="true"';
+      collapsed = '';
+    } else {
+      expanded = 'aria-expanded="false"';
+      collapsed= 'class="collapsed"';
+    }
+    
+    var html = '<div class="panel panel-default">'+
+                  '<div class="panel-heading" role="tab" id="' + element.sectionId + 
+                  'heading' + index + '">'+
+                    '<h4 class="panel-title">'+
+                    '<a ' + collapsed + 'data-toggle="collapse" data-parent="#accordion" href="#' +
+                     element.sectionId + index + '" ' + expanded + '"aria-controls="' + 
+                     element.sectionId + index + '">'+
+                  element.webTitle + '</a></h4>'+
+                    '</div>'+
+                  '<div id="'+ element.sectionId + index +
+                   '" class="panel-collapse collapse" role="tabpanel" aria-labelledby="'+ 
+                   element.sectionId + 'heading' + index +'">'+
+                  '<div class="panel-body">' +
+                  '<a href="'+ element.webUrl + '">'+
+                  element.fields.main+ '</a>' +
+                '</div>'+
+              '</div>'+
+            '</div>'+
+        '</div>';
+
+        accordionHtml.push(accordionRoot+html);
+  }); 
+  var accordionFinished = accordionHtml.join("");
+
+  $('#'+ section + '-accordion').append( accordionFinished );
+};
+
+
+
+
+
+
+
+//            "<li><a class='" + element.sectionId + "-article' href='"+ element.webUrl +  "'>" +element.webTitle + '</a></li>';
+            
 
 
 $(document).ready(function(){
@@ -63,7 +112,7 @@ $(document).ready(function(){
 		reloadNewsBySection( 'travel')
 	}),
 	
-	// This call to the Guaradian API gets called on initial loading of the webpage in order to populate the active page
+	// This call to the Guardian API gets called on initial loading of the webpage in order to populate the active page
 	// straisght away.  Only need to populate the active page to save on unneccessary calls to the API
 	reloadNewsBySection( 'uk-news');
 
