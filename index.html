@@ -21,31 +21,37 @@
 			<h1>Guardian News</h1>
 		</header>
 		<div class='container'>
-		<div class='row'>
-			<div class='col-xs-3'></div>
-			<div class='col-xs-6'>
-				<div role='tabpanel' class='tabpanel'>
-					<ul id='sections'class="nav nav-tabs" role="tablist">	   
-					   <li role='presentation' class='active'><a href="#uknews" class='a-uknews' aria-controls='uknews' data-toggle="tab">UK News</a><li>
-					   <li role='presentation'><a href="#football" class='a-football' aria-controls='football' data-toggle="tab">Football</a></li>
-					   <li role='presentation'><a href="#travel" class='a-travel' aria-controls='travel' data-toggle="tab"> Travel </a></li>
-					</ul>
-					<!-- Tab panes -->
-					<div class="tab-content">
-						<div role="tabpanel" class="tab-pane active" id="uknews">
-							<ol id='uk-news-result'></ol>	
-						</div>
-						<div role="tabpanel" class="tab-pane zone-sport" id="football">
-							<ol id='football-result'></ol>
-						</div>
-						<div role="tabpanel" class="tab-pane" id="travel">
-							<ol id='travel-result'></ol>
+			<div class='row'>
+				<div class='col-xs-3'></div>
+				<div class='col-xs-6'>
+					<div role='tabpanel' class='tabpanel'>
+						<ul id='sections'class="nav nav-tabs" role="tablist">	   
+						   <li role='presentation' class='active'><a href="#uknews" class='a-uknews' aria-controls='uknews' data-toggle="tab">UK News</a></li>
+						   <li role='presentation'><a href="#football" class='a-football' aria-controls='football' data-toggle="tab">Football</a></li>
+						   <li role='presentation'><a href="#travel" class='a-travel' aria-controls='travel' data-toggle="tab"> Travel </a></li>
+						</ul>
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="uknews">
+								<div id="uk-news-accordion">
+								<!-- This is where accordions live-->
+								</div>
+							</div>
+							<div role="tabpanel" class="tab-pane zone-sport" id="football">	
+								<div id="football-accordion">
+								</div>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="travel">
+								<div id="travel-accordion">
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class='col-xs-3'></div>
-		</div>		
+				<div class='col-xs-3'></div>
+		</div>
+			</div>		
+		</div>
 	</div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
