@@ -59,24 +59,28 @@ function addArticlesToAccordion(data, section){
     }
     
     var html = '<div class="panel panel-default">'+
-                  '<div class="panel-heading" role="tab" id="' + element.sectionId + 
-                  'heading' + index + '">'+
+                  '<div class="panel-heading" role="tab" id="' + element.sectionId + 'heading' + index + '">'+
                     '<h4 class="panel-title">'+
                     '<a ' + collapsed + 'data-toggle="collapse" data-parent="#accordion" href="#' +
                      element.sectionId + index + '" ' + expanded + '"aria-controls="' + 
                      element.sectionId + index + '">'+
-                  element.webTitle + '</a></h4>'+
-                    '</div>'+
+                     element.webTitle + '</a></h4>'+
+                  '</div>'+
                   '<div id="'+ element.sectionId + index +
-                   '" class="panel-collapse collapse" role="tabpanel" aria-labelledby="'+ 
-                   element.sectionId + 'heading' + index +'">'+
-                  '<div class="panel-body">' +
-                  '<a href="'+ element.webUrl + '">'+
-                  element.fields.main+ '</a>' +
+                     '" class="panel-collapse collapse" role="tabpanel" aria-labelledby="'+ 
+                     element.sectionId + 'heading' + index +'">'+
+                    '<div class="panel-body">' +
+                      '<a href="'+ element.webUrl + '">'+
+                      element.fields.main+ '</a>' +
+                    //'</div>' +
+                      '<div>' +
+                      ' <a href="' + element.webUrl + '">'+
+                        element.fields.trailText + '</a>' +
+                      '</div>'+
+                      
+                  '</div>'+
                 '</div>'+
-              '</div>'+
-            '</div>'+
-        '</div>';
+              '</div>';
 
         accordionHtml.push(accordionRoot+html);
   }); 

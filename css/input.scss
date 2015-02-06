@@ -19,6 +19,39 @@ body {
   }
 }
 
+figure {
+   padding: 5px;
+   font-size: .875em;
+   display: table;
+   margin-right: auto;
+}
+
+figure img {
+    display: block;
+    width: 100%;
+}
+
+figcaption {
+    display: table-caption;
+    caption-side: bottom;
+    padding: 0 5px 5px;
+}​
+
+body {
+	font-family: Open Sans, sans-serif;
+	background-color: #F4F4F4;
+}
+
+.navbar {
+  background-color: #005689;
+  font-family: "Guardian Egyptian Headline", Georgia, serif;
+  clear:both;
+  margin-bottom: 0;
+  a {
+    color: #fff;
+  }
+}
+
 .nav-tabs {
   li.active a {
   background: #dfdfdf;
@@ -48,13 +81,21 @@ background-color: $guardianBlue;
   margin-bottom: 5px;
 
   h1 {
-  font-family: "Guardian Egyptian Headline", Georgia, serif;
-
+    font-family: "Guardian Egyptian Headline", Georgia, serif;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
     margin: 0;
+  }
 
+  .the {
+    color: #AAD8F1;
+    display: inline-block;
+  }
+
+  .guardianTitle {
+  color: #fff;
+  display: inline-block;
   }
 
   .the {
