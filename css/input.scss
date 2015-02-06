@@ -1,36 +1,94 @@
 ---
-# Front matter comment to ensure Jekyll properly reads file.
+
 ---
+$primaryColor: #F4F4F4;
+$guardianBlue: #005689; 
 
-$primaryColor:#F5F5E1;
+figure {
+   padding: 5px;
+   font-size: .875em;
+   display: table;
+   margin-right: auto;
+}
 
+figure img {
+    display: block;
+    width: 100%;
+}
 
-body{
-	
+figcaption {
+    display: table-caption;
+    caption-side: bottom;
+    padding: 0 5px 5px;
+}​
+
+body {
 	font-family: Open Sans, sans-serif;
-	background-color:$primaryColor;
+	background-color: #F4F4F4;
+}
+
+.navbar {
+  background-color: #005689;
+  font-family: "Guardian Egyptian Headline", Georgia, serif;
+  clear:both;
+  margin-bottom: 0;
+  a {
+    color: #fff;
+  }
+}
+
+.nav-tabs {
+  li.active a {
+  background: #dfdfdf;
+  border-right: 1px solid #ebebeb;
+  border-right: 0.0625rem solid #ebebeb;
+  font-size: 15px;
+  color: $guardianBlue;
+  }
+  li a {
+  background: #00456e;
+  border: 1px solid #a9a9a9;
+  border-bottom-color: #999;
+  font-size: 15px;
+  color: #fff;
+  }
+}
+
+.nav li a:hover {
+text-decoration: none;
+background-color: $guardianBlue;
 }
 
 .site-header{
 
+  background-color: $guardianBlue;
+  clear:both;
+  margin-bottom: 5px;
+
   h1 {
   font-family: "Guardian Egyptian Headline", Georgia, serif;
 
-    color: #446077;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    border-top: 2px solid;
-    border-top-color: rgb(97,128,155);
-    border-top-width: thick;
+    margin: 0;
 
+  }
+
+  .the {
+    color: #AAD8F1;
+    display: inline-block;
+  }
+
+  .guardianTitle {
+  color: #fff;
+  display: inline-block;
   }
 	
 	ul{
         padding:0;
         margin:0;
-
-      }
+    }
 
     li{
     
@@ -42,8 +100,8 @@ body{
     a{
 
        display:block;
-       padding: 10px;
-       background-color:$primaryColor;
+       padding: 11px;
+       background-color: $guardianBlue;
        color:#FFF;
        text-decoration: none;
     }
@@ -51,21 +109,11 @@ body{
 
 .nav-tabs{
   font-family: "Guardian Egyptian Headline", Georgia, serif;
- }
+}
 .tab-content{
   font-family: "Guardian Egyptian Headline", Georgia, serif;
-
-}
-.uk-news-article{
-  color: #D61D00;
 }
 
-.football-article{
-  color: #008000;
-}
-.travel-article{
-  color: #066EC9;
-}
 .group:before,
 .group:after {
     content: "";
@@ -78,7 +126,7 @@ body{
     zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
 
-.btn btn-primary{
+.btn btn-primary {
 	
 	display: inline-block;
 	padding: 15px;
@@ -89,4 +137,31 @@ body{
 	font-weight: "bold";
 	text-transform: uppercase;
 	text-decoration: none;
+}
+
+#uknews a {
+  color: #D61D00;
+  text-decoration: none;
+}
+
+#football a {
+  color: #008000;
+  text-decoration: none;
+}
+
+#travel a {
+  color: #066EC9;
+  text-decoration: none;
+}
+
+.nav-tabs {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+  width:500px;
+  height:auto;
+  align: center;
 }

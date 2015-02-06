@@ -2,6 +2,24 @@ body {
   font-family: Open Sans, sans-serif;
   background-color: #F5F5E1; }
 
+figure {
+   background-color: #fff;
+   padding: 5px;
+   font-size: .875em;
+   display: table;
+}
+
+figure img {
+    display: block;
+    width: 100%;
+}
+
+figcaption {
+    display: table-caption;
+    caption-side: bottom;
+    background: #fff;
+    padding: 0 5px 5px;
+}​
 .site-header h1 {
   font-family: "Guardian Egyptian Headline", Georgia, serif;
   color: #446077;
