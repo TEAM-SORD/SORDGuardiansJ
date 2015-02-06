@@ -71,8 +71,7 @@ function addArticlesToAccordion(data, section){
                      element.sectionId + 'heading' + index +'">'+
                     '<div class="panel-body">' +
                       '<a href="'+ element.webUrl + '">'+
-                      element.fields.main+ '</a>' +
-                    //'</div>' +
+                      element.fields.main+ '</a>' +                    
                       '<div>' +
                       ' <a href="' + element.webUrl + '">'+
                         element.fields.trailText + '</a>' +
