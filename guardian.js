@@ -101,17 +101,17 @@ function addArticlesToAccordion(data, section){
 $(document).ready(function(){
 	
 	$('.a-uknews').click(function(e){		
-		$('#uk-news-result').empty();
+		$('#uk-news-accordion').empty();
 		reloadNewsBySection( 'uk-news' );	
 	}),
 
 	$('.a-football').click(function(e){		
-		$('#football-result').empty();
+		$('#football-accordion').empty();
 		reloadNewsBySection( 'football' );
 	}),
 
 	$('.a-travel').click(function(e){		
-		$('#travel-result').empty();
+		$('#travel-accordion').empty();
 		reloadNewsBySection( 'travel')
 	}),
 	
