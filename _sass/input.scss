@@ -1,12 +1,11 @@
 ---
-
 ---
-$primaryColor: #F4F4F4;
-$guardianBlue: #005689; 
+$primary-color: #F4F4F4;
+$guardian-blue: #005689; 
 
 body {
-	font-family: Open Sans, sans-serif;
-	background-color: #F4F4F4;
+  font-family: Open Sans, sans-serif;
+  background-color: #F4F4F4;
 }
 
 .navbar {
@@ -24,7 +23,7 @@ body {
   background: #dfdfdf;
   border-right: 1px solid #ebebeb;
   border-right: 0.0625rem solid #ebebeb;
-  font-size: 15px;
+  font-size: 16px;
   color: $guardianBlue;
   }
   li a {
@@ -66,8 +65,8 @@ background-color: $guardianBlue;
   color: #fff;
   display: inline-block;
   }
-	
-	ul{
+  
+  ul{
         padding:0;
         margin:0;
     }
@@ -82,7 +81,7 @@ background-color: $guardianBlue;
     a{
 
        display:block;
-       padding: 11px;
+       padding: 10px;
        background-color: $guardianBlue;
        color:#FFF;
        text-decoration: none;
@@ -109,16 +108,16 @@ background-color: $guardianBlue;
 }
 
 .btn btn-primary {
-	
-	display: inline-block;
-	padding: 15px;
-	margin-right: 10px;
-	border: 1px solid $primaryColor;
-	border-radius: 7px;
-	font-size: 80%;
-	font-weight: "bold";
-	text-transform: uppercase;
-	text-decoration: none;
+  
+  display: inline-block;
+  padding: 15px;
+  margin-right: 10px;
+  border: 1px solid $primaryColor;
+  border-radius: 7px;
+  font-size: 80%;
+  font-weight: "bold";
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 #uknews a {
