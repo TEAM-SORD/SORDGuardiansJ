@@ -1,4 +1,5 @@
 var assert = require('assert');
+//var shoul//d = require
 var request = require('supertest');
 var request2 = require('supertest');
 
@@ -17,9 +18,9 @@ describe("When a user goes to the home page", function() {
 		.expect(200,done);
 	};
 
-	it("should contain the heading 'Guardian News'", function(done) {
+	it("should contain the heading 'Guardian'", function(done) {
     		request.get("/")
-    		.expect(/Guardian News/, done);
+    		.expect(/Guardian/, done);
 	});
 
 	it("should contain the three tabs 'UK-News', 'Football', 'Travel'", function(done) {
@@ -47,18 +48,17 @@ describe("When a user goes to the home page", function() {
 		}
 	});
 
+});
 
-
-//describe( "Check Guardian API calls returns JSON", function() {	
-
-
+// USER STORY: I WOULD LIKE TO SEE THE MOST RECENT ARTICLES ON THE 3 SECTIONS
+describe( "Check Guardian API calls returns JSON", function() {	
 
 	it('respond with json from UK News, Football and Travel API Calls', function(done){
 		testAPICalls();
 
 		function testAPICalls(){
 			request2
-		      .get('/search?section=uk-news&api-key=kxna6pxmdg7q35pjvhhkh2m9')
+		      .get('/search?section=uk-news&order-by=newest&api-key=test')
 		      //.set('Accept', 'application/json')
 		      .expect('Content-Type', /json/)
 		      //.expect(200, done );
@@ -66,20 +66,59 @@ describe("When a user goes to the home page", function() {
 		}
 		function testFootballAPICall() {
 			request2
-				.get('/search?section=football&order-by=newest&show-fields=all&api-key=test')
+				.get('/search?section=football&order-by=newest&api-key=test')
 				.expect('Content-Type', /json/)
 				.expect(200, testTravelAPICall());
 				//.expect(200, done);
 		}
 		function testTravelAPICall(){
 			request2
-				.get('/search?section=travel&order-by=newest&show-fields=all&api-key=test')
+				.get('/search?section=travel&order-by=newest&api-key=test')
 				.expect('Content-Type', /json/)
 				.expect(200, done );
-		}
-		
+		}		
   	});
 
-  });
+
+	//  USER STORY: AS A USER I WOULD LIKE TO SEE AT LEAST 5 ARTICLES PER SECTION
+
+	it("UK News should have at least 5 articles", function(done) {
+      	request2
+      		.get('/search?section=uk-news&order-by=newest&api-key=test')
+          	.expect(function(res){
+            	assert.equal(res.body.response.status, 'ok');
+          	})
+          	.expect(function(res){
+            	assert.equal(res.body.response.pageSize >= 5, true);
+          	})
+          .end(done);
+  	});
+
+  	it("Football should have at least 5 articles", function(done) {
+      	request2
+      		.get('/search?section=football&order-by=newest&api-key=test')
+          	.expect(function(res){
+            	assert.equal(res.body.response.status, 'ok');
+          	})
+          	.expect(function(res){
+            	assert.equal(res.body.response.pageSize >= 5, true);
+          	})
+          .end(done);
+  	});
+
+  	it("travel should have at least 5 articles", function(done) {
+      	request2
+      		.get('/search?section=travel&order-by=newest&api-key=test')
+          	.expect(function(res){
+            	assert.equal(res.body.response.status, 'ok');
+          	})
+          	.expect(function(res){
+            	assert.equal(res.body.response.pageSize >= 5, true);
+          	})
+          .end(done);
+  	});
+  	
+
+});
 
  
