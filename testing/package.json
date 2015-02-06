@@ -1,0 +1,26 @@
+{
+  "name": "guardtest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "acceptanceTest.js",
+  "dependencies": {
+    "supertest": "^0.15.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.1.0",
+    "supertest": "^0.15.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TEAM-SORD/SORDGuardiansJ.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TEAM-SORD/SORDGuardiansJ/issues"
+  },
+  "homepage": "https://github.com/TEAM-SORD/SORDGuardiansJ"
+}
